@@ -22,6 +22,20 @@
       "when": 1711522564044,
       "tag": "0002_groovy_boomerang",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1711554581366,
+      "tag": "0003_spicy_terror",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1711554606039,
+      "tag": "0004_glorious_medusa",
+      "breakpoints": true
     }
   ]
 }

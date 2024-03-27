@@ -12,6 +12,7 @@ export const places = sqliteTable("places", {
     .notNull(),
   updatedAt: text("updatedAt"),
   mapLink: text("map_link").notNull(),
+  frameLink: text("frame_link").default(""),
   description: text("description"),
 });
 

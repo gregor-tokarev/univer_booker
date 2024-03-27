@@ -1,0 +1,1 @@
+ALTER TABLE places ADD `map_link` text NOT NULL;

@@ -16,6 +16,7 @@
     "nanoid": "^5.0.6",
     "postcss": "^8.4.26",
     "solid-js": "^1.8.16",
+    "solidjs-remixicon": "^1.1.1",
     "tailwindcss": "^3.3.3",
     "vinxi": "^0.3.10"
   },

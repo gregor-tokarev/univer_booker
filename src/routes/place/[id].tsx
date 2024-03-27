@@ -1,6 +1,6 @@
 import { useParams } from "@solidjs/router";
 
-export function PlaceId() {
+export default function PlacePage() {
   const params = useParams();
   return <div>{params["place_id"]}</div>;
 }

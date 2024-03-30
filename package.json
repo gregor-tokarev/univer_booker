@@ -7,17 +7,27 @@
     "start": "vinxi start"
   },
   "dependencies": {
+    "@kobalte/core": "^0.12.6",
     "@libsql/client": "^0.5.6",
+    "@modular-forms/solid": "^0.20.0",
+    "@solid-primitives/input-mask": "^0.2.2",
     "@solidjs/router": "^0.13.1",
     "@solidjs/start": "^1.0.0-rc.0",
     "autoprefixer": "^10.4.14",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.0",
+    "dayjs": "^1.11.10",
     "dotenv": "^16.4.5",
     "drizzle-orm": "^0.29.5",
     "nanoid": "^5.0.6",
     "postcss": "^8.4.26",
+    "solid-icons": "^1.1.0",
     "solid-js": "^1.8.16",
     "solidjs-remixicon": "^1.1.1",
-    "tailwindcss": "^3.3.3",
+    "solidjs-use": "^2.3.0",
+    "tailwind-merge": "^2.2.2",
+    "tailwindcss": "^3.4.3",
+    "tailwindcss-animate": "^1.0.7",
     "vinxi": "^0.3.10"
   },
   "engines": {

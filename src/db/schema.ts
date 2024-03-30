@@ -18,6 +18,7 @@ export const places = sqliteTable("places", {
 
 export const placesRelations = relations(places, ({ many }) => ({
   photos: many(photos),
+  applications: many(applications),
 }));
 
 export const photos = sqliteTable("photos", {
@@ -50,9 +51,25 @@ export const applications = sqliteTable("applications", {
   updatedAt: text("updatedAt"),
   timeStart: text("time_start"),
   timeEnd: text("time_end"),
-  user: text("user_id").references(() => users.id),
-  approval: text("approval_id").references(() => applicationApprovals.id),
+  place: text("place_id"),
+  user: text("user_id"),
+  approval: text("approval_id"),
 });
+
+export const applicationsRelations = relations(applications, ({ one }) => ({
+  place: one(places, {
+    fields: [applications.place],
+    references: [places.id],
+  }),
+  user: one(users, {
+    fields: [applications.user],
+    references: [users.id],
+  }),
+  approval: one(applicationApprovals, {
+    fields: [applications.approval],
+    references: [applicationApprovals.id],
+  }),
+}));
 
 export const applicationApprovals = sqliteTable("application_approvals", {
   id: text("id")
@@ -74,6 +91,7 @@ export const users = sqliteTable("users", {
     .default(sql`CURRENT_TIMESTAMP`)
     .notNull(),
   phone: text("phone").notNull(),
+  fullname: text("fullname").notNull(),
 });
 
 export const admins = sqliteTable("admins", {

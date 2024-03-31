@@ -46,7 +46,7 @@ const applicationFormSchema = z.object({
     message: "Не соответствует формату https://vk.com/{user_name}",
   }),
   phone: z.string(),
-  message: z.string().min(20),
+  message: z.string().min(20, { message: "Слишком коротко" }),
 });
 
 const submitApplication = action(

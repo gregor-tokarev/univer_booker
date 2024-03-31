@@ -3,7 +3,6 @@ import { JSX } from "solid-js";
 interface TimeCardProps extends JSX.HTMLAttributes<HTMLDivElement> {
   selected: boolean;
   disabled: boolean;
-  onActiveChange: (value: boolean) => void;
 }
 
 export default function TimeCard(props: TimeCardProps) {
@@ -15,6 +14,7 @@ export default function TimeCard(props: TimeCardProps) {
         "border-slate-900": props.selected,
         "opacity-40": props.disabled,
       }}
+      title={props.disabled ? "Это время уже забронировано другими людьми" : ""}
     >
       {props.children}
     </div>

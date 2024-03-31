@@ -124,7 +124,6 @@ export default function Application() {
         ];
     }
 
-    console.log(applicationsIntervalsByDays);
     return applicationsIntervalsByDays;
   });
 

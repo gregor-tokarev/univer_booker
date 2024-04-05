@@ -1,6 +1,7 @@
 import { nanoid } from "nanoid";
 import { integer, sqliteTable, text } from "drizzle-orm/sqlite-core";
 import { relations, sql } from "drizzle-orm";
+import { primaryKey } from "drizzle-orm/pg-core";
 
 export const places = sqliteTable("places", {
   id: text("id")
@@ -102,4 +103,12 @@ export const admins = sqliteTable("admins", {
     .default(sql`CURRENT_TIMESTAMP`)
     .notNull(),
   name: text("name"),
+});
+
+export const sessions = sqliteTable("sessions", {
+  id: text("id").primaryKey().notNull(),
+  adminId: text("admin_id")
+    .references(() => admins.id)
+    .notNull(),
+  expiresAt: integer("expires_at").notNull(),
 });

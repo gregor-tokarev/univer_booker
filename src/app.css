@@ -99,6 +99,11 @@
   * {
     @apply border-border;
   }
+
+  html,body {
+    min-height: 100vh;
+  }
+
   body {
     @apply bg-background text-foreground;
     font-feature-settings:

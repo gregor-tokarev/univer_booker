@@ -13,7 +13,7 @@ export function PlaceCard(props: PlaceCardProps) {
   return (
     <div class="overflow-hidden rounded bg-slate-50">
       <img
-        class="w-full object-cover"
+        class="max-h-[400px] w-full object-cover"
         src={props.place.photos[0].url}
         alt={props.place.name}
       />

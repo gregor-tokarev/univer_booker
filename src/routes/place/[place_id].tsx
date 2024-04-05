@@ -44,7 +44,7 @@ export default function PlacePage(props: RouteSectionProps) {
             <For each={detailResource()?.photos}>
               {(p) => (
                 <img
-                  class="w-[500px] cursor-pointer"
+                  class="max-h-[400px]  w-[500px] cursor-pointer"
                   src={p.url}
                   alt=""
                   onClick={() => setModalImg(p.url)}

@@ -20,14 +20,7 @@ export default function Home() {
       <h1 class="mb-6 text-5xl text-slate-800">Доступные места</h1>
       <div class="grid gap-4 text-gray-700 md:grid-cols-2">
         <Show when={placesResource()}>
-          <For each={placesResource()}>
-            {(p) => (
-              <>
-                {" "}
-                <PlaceCard place={p} /> <PlaceCard place={p} />
-              </>
-            )}
-          </For>
+          <For each={placesResource()}>{(p) => <PlaceCard place={p} />}</For>
         </Show>
       </div>
     </div>

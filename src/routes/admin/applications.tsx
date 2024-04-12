@@ -39,6 +39,7 @@ const applicationsQuery = cache(async () => {
   return db.query.applications
     .findMany({
       with: { user: true, approval: true },
+      orderBy: applications.timeStart,
     })
     .execute();
 }, "applications");
@@ -60,7 +61,6 @@ const toggleApproval = action(
       .execute();
 
     if (application.approval) {
-      console.log(values);
       return db
         .update(applicationApprovals)
         .set({

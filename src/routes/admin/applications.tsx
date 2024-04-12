@@ -27,7 +27,7 @@ import {
 } from "@modular-forms/solid";
 import { TextInput } from "~/components/ui/TextInput";
 import Button from "~/components/ui/Button";
-import { eq } from "drizzle-orm";
+import { desc, eq } from "drizzle-orm";
 import { applicationApprovals, applications } from "~/db/schema";
 import objectPath from "object-path";
 import { getAdmin } from "~/lib/getAdmin";
@@ -39,7 +39,7 @@ const applicationsQuery = cache(async () => {
   return db.query.applications
     .findMany({
       with: { user: true, approval: true },
-      orderBy: applications.timeStart,
+      orderBy: desc(applications.timeStart),
     })
     .execute();
 }, "applications");

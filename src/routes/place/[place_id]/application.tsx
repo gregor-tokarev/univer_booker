@@ -37,6 +37,7 @@ import { and, eq, InferInsertModel } from "drizzle-orm";
 import { applicationApprovals, applications, users } from "~/db/schema";
 import { db } from "~/db";
 import { RiSystemShieldCheckLine } from "solid-icons/ri";
+import { Resend } from "resend";
 
 dayjs.extend(relativeTime);
 
@@ -48,6 +49,14 @@ const applicationFormSchema = z.object({
   phone: z.string(),
   message: z.string().min(20, { message: "Слишком коротко" }),
 });
+
+// hardcoded
+// move to db later
+const emails = [
+  "kozelvn@rgsu.net",
+  "MerzlikinPS@rgsu.net",
+  "BezliudnaiaDA@rgsu.net",
+];
 
 const submitApplication = action(
   async (
@@ -76,6 +85,14 @@ const submitApplication = action(
       })
       .returning()
       .execute();
+
+    const resend = new Resend(process.env.RESEND_TOKEN);
+    await resend.emails.send({
+      from: "noreply@booker.ru",
+      to: emails,
+      subject: "Новая заявка",
+      html: "<p>Новая заявка</p>",
+    });
 
     return application;
   },

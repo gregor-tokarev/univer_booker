@@ -22,6 +22,7 @@
     "nanoid": "^5.0.6",
     "object-path": "^0.11.8",
     "postcss": "^8.4.26",
+    "resend": "^3.2.0",
     "solid-icons": "^1.1.0",
     "solid-js": "^1.8.16",
     "solidjs-remixicon": "^1.1.1",
